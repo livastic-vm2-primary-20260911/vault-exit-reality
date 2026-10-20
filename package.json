@@ -1,0 +1,11 @@
+{
+  "name": "vault-exit-reality",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "smoke:live": "node scripts/live-smoke.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

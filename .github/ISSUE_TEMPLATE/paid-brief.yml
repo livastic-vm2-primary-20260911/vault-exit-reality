@@ -1,0 +1,39 @@
+name: "Request a scoped read-only vault exit brief ($19 USDC pilot)"
+description: "Ask for a written scope and escrow/payment proposal. Do not send funds, keys, seed phrases, or private data."
+title: "[Read-only vault brief] "
+labels: ["commercial-inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a public issue, not a private order form. **Only provide public network, vault address and public documentation.** We never require signing, deposits, wallet connections, secrets, KYC or unverified payments. This service is a technical evidence brief, not a contract audit, financial advice or exit guarantee. The $19 USDC pilot price applies only after scope agreement and an authorized payment route/escrow are confirmed.
+  - type: dropdown
+    id: network
+    attributes:
+      label: Chain
+      options: [Ethereum Mainnet, Base Mainnet, Arbitrum One, Other (please specify)]
+    validations:
+      required: true
+  - type: input
+    id: vault
+    attributes:
+      label: Public vault contract
+      description: Never provide private keys or seed phrases.
+      placeholder: "0x... (public contract address only)"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you want checked?
+      description: Only public non-sensitive details.
+      placeholder: "e.g., which public contract method reports a direct exit limit and does this vault have a documented request/claim flow?"
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Scope acknowledgment
+      options:
+        - label: I understand this is a public issue, an inquiry rather than an automatic paid order, and no exit or protocol-safety guarantees are offered.
+          required: true

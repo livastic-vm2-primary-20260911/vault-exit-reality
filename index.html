@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check ERC-4626 vault maxWithdraw and maxRedeem at one chain-verified block. No wallet connection, signature, contract approval, or transaction.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ethereum-rpc.publicnode.com https://mainnet.base.org https://arb1.arbitrum.io; img-src 'self' data:; form-action 'none'; object-src 'none'; base-uri 'none'">
+  <title>Vault Exit Reality — what does the contract currently report?</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header"><a class="brand" href="./" aria-label="Vault Exit Reality home"><span class="mark">V/</span><span>VAULT EXIT<br><b>REALITY</b></span></a><div class="header-meta"><span class="dot"></span> READ-ONLY · OPEN SOURCE<br><small>NO WALLET CONNECTION · NO SIGNATURE</small></div></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ERC-4626 // CHAIN SNAPSHOT</div>
+      <h1>Your vault APY is one number.<br><em>Your exit limit is another.</em></h1>
+      <p>Read <code>maxWithdraw</code>, <code>maxRedeem</code> and other public vault values at a verified block. See what the contract declares for a public wallet address, without granting approvals or connecting a wallet.</p>
+      <div class="hero-strap"><span>01. READ CHAIN</span><span>02. REVIEW LIMITS</span><span>03. VERIFY IN PROTOCOL</span></div>
+    </section>
+    <section class="main-grid" aria-label="Vault checker">
+      <div class="card form-panel">
+        <h2><span class="step">01</span> Read a vault</h2>
+        <form id="checker" autocomplete="off">
+          <label for="chain">Network</label>
+          <select id="chain" name="chain">
+            <option value="ethereum">Ethereum Mainnet · chain 1</option>
+            <option value="base">Base Mainnet · chain 8453</option>
+            <option value="arbitrum">Arbitrum One · chain 42161</option>
+          </select>
+          <label for="vault">ERC-4626 vault contract address <span class="required">*</span></label>
+          <input id="vault" name="vault" type="text" spellcheck="false" inputmode="text" maxlength="42" placeholder="0x… 40 hex characters" required aria-describedby="vault-help">
+          <div class="help" id="vault-help">Not a token ticker or vault name. Verify the exact contract and chain from the protocol's documentation.</div>
+          <label for="owner">Public wallet / owner address <span class="optional">OPTIONAL</span></label>
+          <input id="owner" name="owner" type="text" spellcheck="false" inputmode="text" maxlength="42" placeholder="0x… leave empty for vault-wide info">
+          <div class="help">For personal limits. The public owner address is sent directly to the selected public RPC. We do not store or collect it.</div>
+          <div class="actions"><button id="scan" type="submit">Read on-chain state →</button><button type="button" class="secondary" id="demo">Use public example</button></div>
+          <p class="data-note">No transaction, gas, contract interaction, password, signature, or browser wallet permission is requested.</p>
+        </form>
+      </div>
+      <div class="card result-panel" id="result-panel" aria-live="polite" aria-atomic="true">
+        <div class="result-label"><span class="step">02</span> Snapshot <span id="result-tag">NOT YET RUN</span></div>
+        <p id="result-message" class="result-empty">Enter a contract address and run a read-only check. No live data is loaded until you select “Read on-chain state”.</p>
+        <div id="result-data" hidden>
+          <div class="summary" id="summary"></div>
+          <div class="metrics" id="metrics"></div>
+          <div class="block-meta" id="block-meta"></div>
+          <div id="errors" class="warnings" hidden></div>
+          <button type="button" class="download" id="download">↓ Export this read-only evidence (.json)</button>
+        </div>
+      </div>
+    </section>
+    <section class="below">
+      <article class="purpose"><div class="eyebrow">WHAT YOU ARE ACTUALLY CHECKING</div><h2>A limit, not a promise.</h2>
+        <p><strong>maxWithdraw(owner)</strong> is the standard's declared asset amount allowed through a direct withdrawal. <strong>maxRedeem(owner)</strong> is the declared redeemable share amount. <strong>previewRedeem(shares)</strong> estimates assets at the sampled block but intentionally does not enforce withdrawal limits.</p>
+        <p>Results can become stale before you transact. Some vaults impose asynchronous request/claim flows, pause permissions, permissioned exits, share locks, off-chain intermediaries, cooldowns, or liquidity restrictions. ERC-4626 reads cannot prove any of these are safe or that an exit will execute. Inspect protocol terms, implementation and the current withdrawal queue separately.</p>
+        <a class="learn" href="https://eips.ethereum.org/EIPS/eip-4626" target="_blank" rel="noopener noreferrer">Read the official ERC-4626 standard ↗</a>
+      </article>
+      <article class="service"><div class="eyebrow">FOR COMPLEX VAULTS</div><h2>Need a human-readable exit brief?</h2>
+        <p>Request a custom, reproducible <strong>read-only ERC-4626 exit evidence brief</strong> for a vault and a public owner address. Deliverable: network/contract verification, limitations, withdrawal-call evidence, protocol-documentation links, and a risk/unknowns checklist. <strong>Not an audit, financial recommendation, or guaranteed exit.</strong></p>
+        <p class="price">$19 <span>USDC proposed fixed-scope pilot · only after written agreement</span></p>
+        <a class="order" href="https://github.com/livastic-vm2-primary-20260911/vault-exit-reality/issues/new?template=paid-brief.yml" target="_blank" rel="noopener noreferrer">Request a scoped quote ↗</a>
+        <p class="subnote">Never send crypto to an unverified address. Payment method and escrow are agreed after scope acceptance; no automatic charge on this page. For general free feedback, open a <a href="https://github.com/livastic-vm2-primary-20260911/vault-exit-reality/issues/new/choose" target="_blank" rel="noopener noreferrer">public issue</a> (no sensitive data).</p>
+      </article>
+    </section>
+  </main>
+  <footer><span>V/ VAULT EXIT REALITY · NON-CUSTODIAL · NO TRACKING</span><span><a href="https://github.com/livastic-vm2-primary-20260911/vault-exit-reality" rel="noopener noreferrer">SOURCE</a> · <a href="https://eips.ethereum.org/EIPS/eip-4626" rel="noopener noreferrer">SPEC</a> · NOT INVESTMENT OR SECURITY ADVICE</span></footer>
+  <script type="module" src="./src/app.mjs"></script>
+</body>
+</html>
