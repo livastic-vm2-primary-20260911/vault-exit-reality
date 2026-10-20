@@ -100,7 +100,7 @@ test("static example contains only first party code/assets; no cookies/forms/tra
 });
 test("new sample and existing free human inquiry listed in sitemap",()=>{
  const urls=[...sitemap.matchAll(/<url>/g)];
- assert.equal(urls.length,4);
+ assert.equal(urls.length,5);
  assert(sitemap.includes("vault-exit-reality/sample-brief/"));
  assert(sitemap.includes("vault-exit-reality/sample-async/"));
  assert(contact.includes('href="./sample-async/"'));

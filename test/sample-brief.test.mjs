@@ -85,9 +85,9 @@ test("free-to-paid discovery is visible and has voluntary email quote only",()=>
  assert(html.includes("optional 19 native Circle Base USDC pilot"));
  assert(html.includes("No fee is charged"));
 });
-test("sitemap advertises four original owner canonical paths, not outsider URLs",()=>{
+test("sitemap advertises five original owner canonical paths, not outsider URLs",()=>{
  const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
- assert.equal(urls.length,4);
+ assert.equal(urls.length,5);
  assert(urls.every(u=>u.startsWith("https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/")));
  assert(urls.some(u=>u.endsWith("/sample-brief/")));
 });

@@ -10,6 +10,16 @@ Product validation path: The FREE site is live. No-website-login human pre-sale 
 
 Commercial deliverable: chain/contract identification; pinned-block maxWithdraw/maxRedeem/previewRedeem evidence, optional public owner position; public protocol-doc link checks; exit checklist and explicit unknowns, with 1 PDF- or Markdown-style written brief (format agreed with buyer). Not an audit, tax or investment recommendation or a guarantee of recoverable funds.
 
+## Agent-friendly FIXED service purchase verification
+
+The public /agents/ page provides ONE machine-readable static quote and an AI-agent-only decision checklist for the original ACTIVE Clawlancer FIXED 19 native Circle Base USDC service. It links direct official read-only listing lookup and original official Clawlancer POST buy docs, but DOES NOT make a POST, connect wallets, handle buyer API keys or sign transactions. Every purchase requires the real independent buyer's explicit approval, written technical scope, provider fees/gas and refund terms. A generic human marketplace screen displaying "Open for claims" is not a verified human FIXED checkout; never use /claim instead of /buy. The static quote can become stale, so always GET the listing and check the current active seller/price before approving any platform payment.
+
+Structured informational metadata: https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/agents/offer.json
+Machine-readable non-executable guidance: https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/agents/SKILL.md
+Live public buyer docs: https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/agents/
+
+No new separate marketplace account, SKU, payment, buyer, revenue or legal identity is created by this page.
+
 ## ERC-7540 read-only redemption queue inspection
 
 A second independent form in the SAME free application now reads the pending and claimable **shares** for an optional **public request controller** plus EXACT decimal uint256 request ID, on Ethereum/Base/Arbitrum. It implements the official [ERC-7540](https://eips.ethereum.org/EIPS/eip-7540) async redemption selectors pendingRedeemRequest(uint256,address) and claimableRedeemRequest(uint256,address) and first requires ERC-165 supportsInterface to return true for async redemption (0x620ee8e4), common operator methods (0xe3bc4e65), ERC-7575 share() (0x2f0a18c5), and false for invalid 0xffffffff. Without these exact declarations, it **DOES NOT** treat the vault's nonexistent request view as zero. It distinguishes RPC/revert/ABI errors from zero. All view calls use ONE pinned block; if a matching ERC-4626 check ran first, reuses that block, otherwise samples a fresh block. No owner signature, wallet permission, request creation, claim or transaction is ever emitted.
