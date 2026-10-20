@@ -1,0 +1,5 @@
+.zero-limit-context{border:1px solid #82683f;background:#2b241a;color:#e6d1aa;border-radius:7px;padding:17px 18px;margin:16px 0 20px}
+.zero-limit-context>strong{color:#f0dcaa;font-size:.82rem}
+.zero-limit-context p{margin:10px 0 0;font-size:.75rem;color:#d8c8b0;line-height:1.77}
+.zero-limit-context a{font-weight:700;color:#d6f1b7;line-height:1.7}
+.zero-limit-context a:focus-visible{outline:2px solid #c7efa4;outline-offset:3px}

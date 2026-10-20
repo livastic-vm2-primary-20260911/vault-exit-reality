@@ -13,6 +13,7 @@
   <title>Vault Exit Reality — what does the contract currently report?</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./async.css">
+  <link rel="stylesheet" href="./limit-context.css">
 </head>
 <body>
   <header class="header"><a class="brand" href="./" aria-label="Vault Exit Reality home"><span class="mark">V/</span><span>VAULT EXIT<br><b>REALITY</b></span></a><div class="header-meta"><span class="dot"></span> READ-ONLY · OPEN SOURCE<br><small>NO WALLET CONNECTION · NO SIGNATURE</small></div></header>
@@ -48,6 +49,11 @@
         <p id="result-message" class="result-empty">Enter a contract address and run a read-only check. No live data is loaded until you select “Read on-chain state”.</p>
         <div id="result-data" hidden>
           <div class="summary" id="summary"></div>
+          <aside class="zero-limit-context" id="zero-limit-context" aria-label="Zero-limit interpretation" hidden>
+            <strong>Understanding a zero limit</strong>
+            <p id="zero-limit-context-text"></p>
+            <p><a id="zero-limit-context-link" href="https://github.com/morpho-org/morpho-snippets#vaultv2-liquidity-lib-alternative-view-for-maxwithdraw--maxredeem" target="_blank" rel="noopener noreferrer">Morpho's official Vault V2 liquidity-lens documentation ↗</a></p>
+          </aside>
           <div class="metrics" id="metrics"></div>
           <div class="block-meta" id="block-meta"></div>
           <div id="errors" class="warnings" hidden></div>

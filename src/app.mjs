@@ -1,4 +1,5 @@
 import {CHAINS, inspectVault, formatUnits, describePosition, serializeSnapshot} from "./core.mjs";
+import {zeroLimitContext} from "./zero-limit-context.mjs";
 const find = (id) => document.getElementById(id);
 const form = find("checker");
 let last = null;
@@ -30,6 +31,15 @@ function showSnapshot(snapshot) {
   const summary = find("summary");
   summary.textContent = describePosition(snapshot);
   summary.className = snapshot.errors.length || (snapshot.owner && (limits.maxWithdraw === 0n || limits.maxRedeem === 0n)) ? "summary warning" : "summary";
+  const context = zeroLimitContext(snapshot);
+  const box = find("zero-limit-context");
+  box.hidden = !context;
+  if(context){
+    find("zero-limit-context-text").textContent = context.summary;
+    const source = find("zero-limit-context-link");
+    source.href = context.externalSource;
+    source.textContent = context.sourceLabel + " ↗";
+  }
   const metrics = find("metrics");
   metrics.replaceChildren(
     row("Vault-managed assets", formatUnits(snapshot.totalAssets, assetDecimals), snapshot.assetSymbol || "underlying token unknown"),
