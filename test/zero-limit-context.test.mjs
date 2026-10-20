@@ -24,12 +24,11 @@ test("one zero asset limit while shares nonzero remains an explicit warning",()=
  assert.equal(zeroLimitContext(snapshot({maxRedeem:1n})).status,"withdraw_zero");
  assert.equal(zeroLimitContext(snapshot({maxWithdraw:1n})).status,"redeem_zero");
 });
-test("zero returns no conclusion about shares that have not been read or have zero balance",()=>{
- let x=zeroLimitContext(snapshot({balance:null}));
- assert.equal(x.sharesProvenPositive,false);
- x=zeroLimitContext(snapshot({balance:0n}));
- assert.equal(x.sharesProvenPositive,false);
- assert.equal(x.status,"both_zero");
+test("zero/no proven owner shares does NOT trigger a misleading Morpho liquidity message",()=>{
+ assert.equal(zeroLimitContext(snapshot({balance:null})),null);
+ assert.equal(zeroLimitContext(snapshot({balance:0n})),null);
+ assert.equal(zeroLimitContext(snapshot({balance:-1n})),null);
+ assert.equal(zeroLimitContext(snapshot({balance:"unknown"})),null);
 });
 test("unknown null is distinct from zero; avoid false status warnings",()=>{
  assert.equal(zeroLimitContext(snapshot({maxWithdraw:null,maxRedeem:null})),null);

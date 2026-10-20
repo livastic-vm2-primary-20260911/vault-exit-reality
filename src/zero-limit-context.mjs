@@ -12,6 +12,9 @@ export const MORPHO_V2_OFFICIAL_GUIDE =
 export function zeroLimitContext(snapshot) {
   if (!snapshot || !snapshot.owner || !snapshot.limits) return null;
   const {maxWithdraw,maxRedeem,balance} = snapshot.limits;
+  // Avoid implying a liquidity problem for addresses without PROVEN shares.
+  // A zero reported owner balance only needs the existing zero-share summary.
+  if (typeof balance !== "bigint" || balance <= 0n) return null;
   if (maxWithdraw !== 0n && maxRedeem !== 0n) return null;
   if (maxWithdraw === null && maxRedeem === null) return null;
   const status = maxWithdraw === 0n && maxRedeem === 0n ? "both_zero" :
