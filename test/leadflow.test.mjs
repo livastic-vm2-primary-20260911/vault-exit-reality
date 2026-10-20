@@ -43,8 +43,8 @@ test("quoted proposal and agent marketplace are correctly labelled, not cash",()
  assert.match(contact,/human checkout not verified/);
  assert.match(contact,/no charge occurs here/i);
 });
-test("sitemap advertises only free checker and manual human inquiry path",()=>{
- assert.equal((sitemap.match(/<url>/g)||[]).length,2);
+test("sitemap advertises free checker, real public sample, and manual human inquiry path",()=>{
+ assert.equal((sitemap.match(/<url>/g)||[]).length,3);
  assert.match(sitemap,/\/vault-exit-reality\/contact\.html/);
 });
 test("legacy provider confirmation never claims a message, order or payment arrived",()=>{

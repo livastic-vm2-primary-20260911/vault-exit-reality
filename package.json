@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "smoke:live": "node scripts/live-smoke.mjs"
+    "smoke:live": "node scripts/live-smoke.mjs",
+    "sample:refresh": "node scripts/build-verified-sample.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

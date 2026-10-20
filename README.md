@@ -10,6 +10,10 @@ Product validation path: The FREE site is live. No-website-login human pre-sale 
 
 Commercial deliverable: chain/contract identification; pinned-block maxWithdraw/maxRedeem/previewRedeem evidence, optional public owner position; public protocol-doc link checks; exit checklist and explicit unknowns, with 1 PDF- or Markdown-style written brief (format agreed with buyer). Not an audit, tax or investment recommendation or a guarantee of recoverable funds.
 
+## Reproducible free sample
+
+A *genuine* public Ethereum mainnet, **vault-wide metadata only** sDAI sample is at https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/sample-brief/ . It includes exact block, observed UTC time, actual contract, RPC provider, totalAssets raw integer evidence and an on-page limitations checklist. No owner was supplied, so the sample **cannot claim maxWithdraw(owner) or holder liquidity**, nor does a positive totalAssets imply cash available for redemption. We deliberately display those uncomputed fields as UNKNOWN, not zero. Source script: scripts/build-verified-sample.mjs; reproducible with npm run sample:refresh (requires network and overwrites the static example with a new historical block). It makes eth_call view reads only: no wallet key, signature, transaction, deposit, approval, API payment, tracking or customer invoice. Evidence is a single-RPC observation and not independent chain finality or a safety audit. Reference standards: https://eips.ethereum.org/EIPS/eip-4626 and https://eips.ethereum.org/EIPS/eip-7540. A paid buyer-specific report would be separate scope and evidence after genuine agreement; visiting the sample creates no order.
+
 ## Run
 
 No dependencies for runtime or tests.
