@@ -21,6 +21,7 @@ function showError(message) {
 }
 function showSnapshot(snapshot) {
   last = snapshot;
+  document.dispatchEvent(new CustomEvent("vault-read-snapshot", {detail:{chain:snapshot.chain,vault:snapshot.vault,block:snapshot.block}}));
   const cfg = CHAINS[snapshot.chain];
   const {limits, assetDecimals, shareDecimals} = snapshot;
   find("result-message").hidden = true;

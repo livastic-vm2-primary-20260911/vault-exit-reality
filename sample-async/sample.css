@@ -1,0 +1,27 @@
+.async-example-hero{padding:64px 0 42px}
+.async-example-hero h1{font-size:clamp(2rem,4.5vw,4rem);letter-spacing:-.052em;line-height:1.12;margin:14px 0 20px}
+.async-example-hero h1 em{font-style:normal;color:#cbeca5}
+.async-example-hero p{font-size:.89rem;color:#b3c4cc;line-height:1.85;max-width:920px}
+.async-example-hero p strong{color:#dff3d1}
+.sample-ribbon{font-size:.72rem!important;color:#d2efbb!important;letter-spacing:.04em;border:1px solid #3f5940;border-radius:7px;background:#18291e;padding:13px 16px;margin-top:23px}
+.sample-example-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sample-example-grid .card h2,.sample-next h2{display:flex;align-items:center;gap:12px;font-size:1.16rem;line-height:1.4;margin:0 0 25px}
+.sample-kv{border-bottom:1px solid #2d3e48;padding:13px 0 17px;overflow-wrap:anywhere}
+.sample-kv span,.sample-kv strong,.sample-kv small{display:block}
+.sample-kv span{color:#9badba;font-size:.75rem}
+.sample-kv strong{color:#d9eec5;font-size:.95rem;margin-top:8px;overflow-wrap:anywhere}
+.sample-kv small{color:#879daa;font-size:.69rem;margin-top:8px;line-height:1.6}
+.sample-warning{border:1px solid #765a39;border-radius:8px;padding:16px;background:#2d251a}
+.sample-warning>strong{color:#f1d7ac;font-size:.9rem}
+.sample-example-grid p{font-size:.8rem;line-height:1.9;color:#b0bfcb}
+.sample-warning p{color:#e0c5a7}
+.sample-warning p strong{color:#f8dfa5}
+.address{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;font-size:.81rem!important}
+.sample-aside{margin-top:24px;color:#97b1bc!important}
+.sample-next{border-top:1px solid #304149;margin-top:54px;padding-top:38px}
+.sample-next p{max-width:950px;font-size:.86rem;line-height:1.92;color:#b2c4ce}
+.sample-next strong{color:#e2ead8}
+.sample-actions{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin:30px 0}
+.sample-link{font-weight:700;font-size:.81rem}
+@media(max-width:850px){.sample-example-grid{grid-template-columns:1fr}.async-example-hero{padding-top:39px}}
+@media print{body{background:#fff;color:#111}.card,.sample-kv{background:white;color:#111;border-color:#ddd}}

@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://livastic-vm2-primary-20260911.github.io/vault-exit-reality/">
   <title>Vault Exit Reality — what does the contract currently report?</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./async.css">
 </head>
 <body>
   <header class="header"><a class="brand" href="./" aria-label="Vault Exit Reality home"><span class="mark">V/</span><span>VAULT EXIT<br><b>REALITY</b></span></a><div class="header-meta"><span class="dot"></span> READ-ONLY · OPEN SOURCE<br><small>NO WALLET CONNECTION · NO SIGNATURE</small></div></header>
@@ -54,6 +55,40 @@
         </div>
       </div>
     </section>
+    <section class="async-area" id="async-queue-check" aria-label="ERC-7540 asynchronous redemption request checker">
+      <div class="eyebrow">03 // OPTIONAL ERC-7540 REQUEST STATE</div>
+      <h2>Withdraw limit says zero? Check an async queue.</h2>
+      <p class="async-intro">ERC-7540 vaults can use a separate request-and-claim flow. If you know your <strong>public request controller</strong> and <strong>exact request ID</strong>, this optional inspection checks ERC-165 interface declarations, then reads pending and claimable redemption <em>shares</em> at one verified block. It never requests a signature, submits a claim, or moves tokens.</p>
+      <div class="async-grid">
+        <article class="card async-controls">
+          <h3><span class="step">A</span> Identify your request</h3>
+          <form id="async-form" autocomplete="off">
+            <label for="async-controller">Public request controller address <span class="required">*</span></label>
+            <input id="async-controller" type="text" spellcheck="false" maxlength="42" required placeholder="0x… controller, not necessarily wallet owner">
+            <p class="help">The request controller may differ from the original share owner or connected wallet. Use the address documented by your protocol or original RedeemRequest event. It is publicly transmitted to the selected RPC provider.</p>
+            <label for="async-request-id">Request ID — exact decimal uint256 <span class="required">*</span></label>
+            <input id="async-request-id" type="text" inputmode="numeric" pattern="(0|[1-9][0-9]{0,77})" maxlength="78" value="0" required>
+            <p class="help">ID 0 is valid for some vaults, but is NOT guaranteed to be your request ID. Other vaults assign nonzero IDs. Confirm your actual ID from protocol documentation or an authentic RedeemRequest event before drawing conclusions.</p>
+            <button type="submit" id="async-run" class="async-action">Check pending &amp; claimable shares →</button>
+            <button type="button" id="async-demo" class="async-secondary">Load real ERC-7540 vault + illustrative controller (no request sent)</button>
+          </form>
+          <p class="data-note">Uses network and vault address above. If the ERC-4626 scan was just run with matching inputs, reuses its historical block. Otherwise pins a fresh block. No connect wallet / deposit / signature / approval / gas.</p>
+        </article>
+        <article class="card async-result" aria-live="polite">
+          <div class="result-label"><span class="step">B</span> Request evidence <span id="async-status">NOT YET RUN</span></div>
+          <p id="async-text" class="result-empty">No async request state has been queried. Unknown means unknown, not zero or withdrawn. Enter a public controller and the correct request ID to check.</p>
+          <div id="async-evidence" hidden>
+            <div id="async-summary" class="summary"></div>
+            <div id="async-metrics" class="metrics"></div>
+            <div id="async-details" class="block-meta"></div>
+            <div id="async-errors" class="warnings" hidden></div>
+            <button type="button" class="download" id="async-download">↓ Export this read-only request evidence (.json)</button>
+          </div>
+        </article>
+      </div>
+      <p class="async-known-demo"><a href="./sample-async/">See a genuine Ethereum Centrifuge ERC-7540 read-only interface sample with source JSON ↗</a> (illustrative controller, not an investor account).</p>
+      <p class="async-disclaimer"><b>Important limits:</b> ERC-7540 status functions return SHARE quantities, not guaranteed withdrawable asset amounts. The async redemption interface must be declared by ERC-165; absent or malformed responses are NOT zero balances. Both pending and claimable can read zero for a wrong ID, another controller, an already claimed request, or a protocol-specific reason. Even a positive claimable figure is not proof of a successful transaction, vault solvency, or a redeemable asset valuation. Some vaults are not ERC-7540 compliant; use their official documentation. <a href="https://eips.ethereum.org/EIPS/eip-7540" target="_blank" rel="noopener noreferrer">Official ERC-7540 specification ↗</a></p>
+    </section>
     <section class="below">
       <article class="purpose"><div class="eyebrow">WHAT YOU ARE ACTUALLY CHECKING</div><h2>A limit, not a promise.</h2>
         <p><strong>maxWithdraw(owner)</strong> is the standard's declared asset amount allowed through a direct withdrawal. <strong>maxRedeem(owner)</strong> is the declared redeemable share amount. <strong>previewRedeem(shares)</strong> estimates assets at the sampled block but intentionally does not enforce withdrawal limits.</p>
@@ -71,5 +106,6 @@
   </main>
   <footer><span>V/ VAULT EXIT REALITY · NON-CUSTODIAL · NO TRACKING</span><span><a href="https://github.com/livastic-vm2-primary-20260911/vault-exit-reality" rel="noopener noreferrer">SOURCE</a> · <a href="https://eips.ethereum.org/EIPS/eip-4626" rel="noopener noreferrer">SPEC</a> · NOT INVESTMENT OR SECURITY ADVICE</span></footer>
   <script type="module" src="./src/app.mjs"></script>
+  <script type="module" src="./src/async-app.mjs"></script>
 </body>
 </html>

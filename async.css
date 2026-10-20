@@ -1,0 +1,25 @@
+.async-area{border-top:1px solid #2b3840;margin-top:54px;padding-top:42px}
+.async-area h2{font-size:clamp(1.6rem,3vw,2.5rem);letter-spacing:-.04em;line-height:1.2;margin:13px 0 18px}
+.async-intro{color:#b0c1cb;line-height:1.85;font-size:.87rem;max-width:940px;margin-bottom:28px}
+.async-intro strong{color:#e0f3ca}.async-intro em{font-style:normal;color:#d1e8be}
+.async-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:20px}
+.async-controls h3{display:flex;align-items:center;gap:12px;font-size:1.14rem;margin:0 0 24px}
+.async-controls label{font-size:.78rem;font-weight:700;display:block;margin:21px 0 9px}
+.async-controls input{width:100%;height:47px;padding:12px 13px;color:#e9eef4;border:1px solid #334754;border-radius:7px;background:#0b1119;outline:none}
+.async-controls input:focus{border-color:#add08b;box-shadow:0 0 0 2px #a6d58a35}
+.async-controls input::placeholder{color:#778797}
+.async-controls .help{font-size:.71rem;color:#8a9aaa;line-height:1.7;margin:9px 0 10px}
+.async-action{width:100%;border:0;border-radius:7px;background:#c6ec9f;color:#11241a;padding:14px;margin-top:17px;font-size:.78rem;font-weight:800}
+.async-action:disabled{opacity:.6;cursor:wait}
+.async-controls .data-note{font-size:.71rem}
+.async-result .result-label{margin-bottom:26px}
+.async-result .result-label #async-status{margin-left:auto;font-size:.65rem;color:#9cb4ab;letter-spacing:.02em;text-align:right}
+.async-result .metrics{margin:17px 0;grid-template-columns:1fr 1fr}
+.async-result .metric{min-height:100px}
+.async-result .metric strong{font-size:1.02rem}
+.async-disclaimer{font-size:.78rem;color:#a9b9c4;line-height:1.85;max-width:1020px;margin-top:24px}
+.async-disclaimer b{color:#deeacf}
+@media(max-width:850px){.async-grid{grid-template-columns:1fr}.async-result .metrics{grid-template-columns:1fr}.async-area{margin-top:40px;padding-top:32px}}
+
+.async-secondary{width:100%;padding:12px;margin-top:10px;background:#22303c;border:1px solid #43535e;border-radius:7px;color:#dbe7e4;font-size:.74rem;font-weight:700;cursor:pointer}
+.async-known-demo{margin-top:24px;font-size:.8rem;line-height:1.6}.async-known-demo a{font-weight:700}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Real read-only ERC-7540 interface observation from a publicly documented Ethereum Centrifuge JTRSY/USDC vault, with a fictional request controller and honest withdrawal caveats.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none';script-src 'none';style-src 'self';connect-src 'none';img-src 'none';form-action 'none';object-src 'none';base-uri 'none'">
+<title>Real ERC-7540 vault, fictional controller | Vault Exit Reality</title>
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="./sample.css">
+</head>
+<body>
+<header class="header"><a class="brand" href="../"><span class="mark">V/</span><span>VAULT EXIT<br><b>REALITY</b></span></a><div class="header-meta"><span class="dot"></span> REAL PUBLIC CONTRACT<br><small>FICTIONAL REQUEST CONTROLLER</small></div></header>
+<main>
+<section class="async-example-hero">
+<div class="eyebrow">ERC-7540 / ACTUAL ETHEREUM RPC INTERFACE EVIDENCE</div>
+<h1>Real async vault.<br><em>No invented investor.</em></h1>
+<p>We inspected a live Ethereum mainnet JTRSY/USDC vault using its <a href="https://developer.centrifuge.io/developer/protocol/deployments/" rel="noopener noreferrer" target="_blank">official Centrifuge deployment registry</a>. The contract declared ERC-7540 asynchronous redemption support via ERC-165 and returned pending and claimable shares for an explicitly <strong>fictional placeholder controller</strong>. We did not identify or act for a real investor.</p>
+<p class="sample-ribbon"><strong>READ-ONLY RPC</strong> · ONCHAIN CONTRACT VIEW · NO WALLET CONNECTION · NO SIGNATURE · NO GAS · NO REAL CUSTOMER POSITION</p>
+</section>
+<section class="sample-example-grid">
+<article class="card">
+<h2><span class="step">01</span> Verifiable public contract interface</h2>
+<div class="sample-kv"><span>Network</span><strong>Ethereum mainnet (chain 1)</strong><small>RPC chain ID validated; view calls pinned to one block</small></div>
+<div class="sample-kv"><span>Vault from first-party protocol registry</span><strong class="address">0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a</strong><small>Centrifuge JTRSY / USDC public vault</small></div>
+<div class="sample-kv"><span>ERC-165 0x620ee8e4 · async redemption</span><strong>TRUE returned by contract</strong><small>Contract-declared interface, not an independent code audit</small></div>
+<div class="sample-kv"><span>ERC-165 0xe3bc4e65 · common operator methods</span><strong>TRUE returned by contract</strong><small>ERC-7540 shared operator interface</small></div>
+<div class="sample-kv"><span>ERC-165 0x2f0a18c5 · ERC-7575 shares</span><strong>TRUE returned by contract</strong><small>The share token can differ from the vault</small></div>
+<div class="sample-kv"><span>ERC-165 0xffffffff · invalid interface control</span><strong>FALSE returned by contract</strong><small>Rejects broken interfaces claiming all IDs</small></div>
+<p class="sample-aside">The <a href="./centrifuge-jtrsy-ethereum-erc7540-evidence.json">raw evidence JSON</a> records the actual Ethereum sampled block, exact request ID, declared support flags, raw share amounts and RPC source. This HTML is a permanently static educational explanation, not a live quote; the JSON's block is authoritative for this example.</p>
+</article>
+<article class="card">
+<h2><span class="step">02</span> Do not mistake a dummy for your assets</h2>
+<div class="sample-warning">
+<strong>Public placeholder controller</strong>
+<p>This is NOT an actual customer's public controller or authenticated request. The evidence sample is not a contract or guaranteed payout.</p>
+<p class="address">0x000000000000000000000000000000000000dEaD</p>
+<p>Request ID: <strong>0</strong>. These were illustrative inputs; they were NOT obtained from a real redeem request or investor. The ERC-7540 standard allows zero as a request ID but does not require it for all real requests.</p>
+</div>
+<div class="sample-kv"><span>pendingRedeemRequest(0, placeholder)</span><strong>0 raw shares</strong><small>One sampled-block RPC observation for a placeholder; not a real owner's pending balance</small></div>
+<div class="sample-kv"><span>claimableRedeemRequest(0, placeholder)</span><strong>0 raw shares</strong><small>One sampled-block RPC observation for a placeholder; not a real investor's claimable USDC</small></div>
+<p>Both returned zero for this artificial controller at our sampled block. <strong>That says nothing about real customers</strong>. Their request ID could differ; their controller could differ; an earlier request could already be claimed. A positive claimable share amount would still not prove the asset amount, ability to execute a withdrawal, or protocol solvency.</p>
+<p class="sample-aside">ERC-7540 async redemption claims can require a separate authorized transaction after fulfillment. This service never submits requests, claims shares or assets, signs for investors, or recommends transactions. It is not a guarantee of a successful claim or investment return.</p>
+</article>
+</section>
+<section class="sample-next">
+<h2><span class="step">03</span> Check your own PUBLIC request identifiers</h2>
+<p>The free interactive checker supports Ethereum, Base and Arbitrum. Supply the exact public vault, request controller and request ID from a genuine protocol-provided redemption event; it verifies declared ERC-7540 interfaces before reading pending and claimable shares. Missing or malformed responses display <strong>unknown</strong>, never fictitious zero amounts.</p>
+<p>For complex queues an independent customer may voluntarily inquire about a written, limited 19 native Circle Base USDC technical analysis, which is <strong>not</strong> a liquidity guarantee or protocol audit. This demo charges nothing. A separately agreed paid brief needs a written scope and written refund terms before any payment; there is no checkout, wallet connection or automatic charge on this page.</p>
+<div class="sample-actions"><a class="order" href="../#async-queue-check">Use the free async request checker ↗</a><a class="sample-link" href="../contact.html">Optional public technical inquiry ↗</a></div>
+<p><a href="https://eips.ethereum.org/EIPS/eip-7540" rel="noopener noreferrer" target="_blank">ERC-7540 official standard ↗</a> · <a href="https://developer.centrifuge.io/developer/protocol/deployments/" rel="noopener noreferrer" target="_blank">Centrifuge deployment registry ↗</a> · <a href="https://github.com/livastic-vm2-primary-20260911/vault-exit-reality" rel="noopener noreferrer" target="_blank">Reproducible open-source implementation ↗</a></p>
+</section>
+</main>
+<footer><span>V/ VAULT EXIT REALITY · SINGLE RPC OBSERVATION, NOT INVESTMENT ADVICE</span><span>NO TRACKING · NO TRANSACTIONS</span></footer>
+</body></html>
