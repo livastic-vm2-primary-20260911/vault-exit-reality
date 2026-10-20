@@ -112,3 +112,13 @@ test("no new charge or conversion asserted just for viewing educational sample",
  assert.match(sample,/written.*refund terms/i);
  assert.match(sample,/no checkout/i);
 });
+test("public ERC-7540 feedback issue requires non-sensitive technical-only acknowledgement",()=>{
+ const template=file(".github/ISSUE_TEMPLATE/async-queue-feedback.yml");
+ assert.match(html,/template=async-queue-feedback\.yml/);
+ assert.match(template,/name: "Free ERC-7540 interface feedback/);
+ assert.match(template,/labels: \["user-feedback"\]/);
+ assert.match(template,/Do NOT share your wallet\/controller address/);
+ assert.match(template,/This issue is PUBLIC and not a paid order/);
+ assert.match(template,/required: true/);
+ assert(!/<script/.test(template));
+});

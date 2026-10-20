@@ -1,0 +1,59 @@
+name: "Free ERC-7540 interface feedback (public technical details only)"
+description: "Report a reproducible PUBLIC vault/interface behavior. No owner addresses, holdings, secrets, request IDs, wallet signatures, or account records."
+title: "[ERC-7540 technical feedback] "
+labels: ["user-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is PUBLIC and not a paid order, wallet support, redemption service or security audit.
+        Please provide ONLY a verified PUBLIC vault contract (optional) and high-level technical reproducibility.
+        Do NOT share your wallet/controller address, request ID tied to your identity, tx history, screenshots of your account, balances, credentials, API keys or any personal financial information.
+        Any private scoped service inquiry must use the separate optional written quote process.
+  - type: dropdown
+    id: chain
+    attributes:
+      label: Public chain
+      options:
+        - Ethereum mainnet
+        - Base mainnet
+        - Arbitrum One
+        - Other / unsure (describe public documentation)
+    validations:
+      required: true
+  - type: input
+    id: vault
+    attributes:
+      label: PUBLIC protocol vault contract (optional)
+      placeholder: "0x... only if this is a publicly documented vault contract, NOT your wallet"
+      description: Do not disclose your owner/controller wallet. Leave blank when uncertain.
+    validations:
+      required: false
+  - type: dropdown
+    id: category
+    attributes:
+      label: Technical category
+      options:
+        - ERC-165 async redemption support not confirmed
+        - Pending/claimable ABI call returned unknown
+        - ERC-7540 request ID/controller semantics unclear
+        - ERC-7575 external share token unit confusion
+        - Public protocol docs differ from ERC-7540 assumptions
+        - Other read-only technical usability issue
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Describe the PUBLIC technical symptom only
+      description: No real holdings, transaction IDs, block explorer wallet links or customer invoices.
+      placeholder: "Example: Official docs describe an ERC-7540 redemption vault, but supportsInterface(0x620ee8e4) returns false at a public block."
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Privacy and scope
+      options:
+        - label: I understand this issue is PUBLIC, free and not a transaction or paid service, and I will share no wallet/controller identities, request IDs tied to a person, raw customer data, keys or secrets.
+          required: true

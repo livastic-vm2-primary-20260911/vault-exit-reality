@@ -23,3 +23,5 @@
 
 .async-secondary{width:100%;padding:12px;margin-top:10px;background:#22303c;border:1px solid #43535e;border-radius:7px;color:#dbe7e4;font-size:.74rem;font-weight:700;cursor:pointer}
 .async-known-demo{margin-top:24px;font-size:.8rem;line-height:1.6}.async-known-demo a{font-weight:700}
+
+.async-feedback{padding-top:13px;font-size:.77rem;color:#a5b9bd;line-height:1.8}.async-feedback a{font-weight:700}
